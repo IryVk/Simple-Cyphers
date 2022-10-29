@@ -10,7 +10,28 @@ def main():
 
 
 def caesar(function):
-    phrase = input("Enter Text: ")
+    while True:
+        choice = input("Read from (f)ile or (w)rite text here? (f/w) ").lower().strip()
+        if choice not in ["f", "w"]:
+            print("Invalid, please write 'f' to read from file or 'w' to write text here.")
+        else:
+            break
+    
+    if choice == "f":
+        while True:
+            try:
+                filename = input("File name? ")
+                inptr = open(filename, "r")
+                break
+            except FileNotFoundError:
+                print("""Couldn't find file. Make sure file is inside project folder, otherwise write the path to the file and make sure to write the file extension, ex: ###.txt""")
+        
+        phrase = inptr.read()
+        inptr.close()
+        
+
+    elif choice == "w":
+        phrase = input("Enter Text: ")
     while True:
         try:
             key = int(input("Key: "))
@@ -21,10 +42,20 @@ def caesar(function):
             print("Invalid Key, please enter an integer between 1 & 95") #key can be up to 95 because it's still within constraints of ascii characters we can use
 
     if function == "encrypt":
-        return encrypt(phrase, key)
+        encryption = encrypt(phrase, key)
+        if choice == "f":
+            outptr = open("out_" + filename, "w")
+            outptr.writelines(encryption)
+            outptr.close
+        return encryption
 
     elif function == "decrypt":
-        return decrypt(phrase, key)
+        decryption = decrypt(phrase, key)
+        if choice == "f":
+            outptr = open("out_" + filename, "w")
+            outptr.writelines(decryption)
+            outptr.close
+        return decryption
 
 
 def encrypt(ciphertext, key):
