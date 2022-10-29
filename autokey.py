@@ -8,7 +8,6 @@ def main():
 
     print(autokey(function))
 
-    return
 
 
 def autokey(function):
