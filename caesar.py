@@ -27,10 +27,10 @@ def caesar(function):
         return decrypt(phrase, key)
 
 
-def encrypt(plaintext, key):
+def encrypt(ciphertext, key):
     encrypted = ""
-    for char in range(len(plaintext)):
-        x = ord(plaintext[char])
+    for char in range(len(ciphertext)):
+        x = ord(ciphertext[char])
         #make sure x is in values we can change before we change it
         if 126 >= x >= 32:
             x = ((x + key - 32) % 95) + 32
