@@ -25,19 +25,19 @@ def main():
 
     #runs appropriate cipher file according to chosen cipher
     if cipher == "caesar":
-        c.caesar(function)
+        print(c.caesar(function))
 
     elif cipher == "vigenere":
-        v.vigenere(function)
+        print(v.vigenere(function))
     
     elif cipher == "railfence":
-        r.railfence(function)
+        print(r.railfence(function))
 
     elif cipher == "autokey":
-        a.autokey(function)
+        print(a.autokey(function))
 
     elif cipher == "playfair":
-        p.playfair(function)
+        print(p.playfair(function))
 
 
 if __name__ == "__main__":
