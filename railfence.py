@@ -18,7 +18,7 @@ def railfence(function):
                 raise ValueError
             break
         except ValueError:
-            print("Invalid Key, please enter an integer smaller than size of text") #key can be up to 95 because it's still within constraints of ascii characters we can use
+            print("Invalid Key, please enter an integer smaller than size of text") #if key is bigger than or equal to the text, the output will just be the regular text
 
     if function == "encrypt":
         return encrypt(phrase, key)
