@@ -109,7 +109,7 @@ def vigenere(function):
                     key = inptr.readline().strip()  # clean up key
                     for char in key:
                         if char not in range(32, 127):
-                            key.replace(char, "")
+                            key = key.replace(char, "")
                     break
                 except FileNotFoundError:
                     return "Cannot find file containing the key."
