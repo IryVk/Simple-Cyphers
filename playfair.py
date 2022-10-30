@@ -37,12 +37,12 @@ def playfair(function):
                 print("""Couldn't find file. Make sure file is inside project folder, otherwise write the path to the file and make sure to write the file extension, ex: ###.txt""")
 
     
-        phrase = ''.join(inptr.readlines()).lower().replace("j", "i")
+        phrase = ''.join(inptr.readlines())
         inptr.close()
 
     #get text from user
     elif choice == "w":
-        phrase = input("Enter Text: ").lower().replace("j", "i")
+        phrase = input("Enter Text: ")
 
     #ask if user has key or wants an auto key
     while (True):
@@ -69,33 +69,7 @@ def playfair(function):
             if char not in alpha:
                 key = key.replace(char, "")
             
-
-    # remove non alphabet letters
-    for char in phrase:
-        if char not in alpha:
-            phrase = phrase.replace(char, "")
-
-    # split input into two chars each time
-    counter = 0
-    i = 0
-    splitted = []
-    while counter < len(phrase):
-        splitted.append(phrase[counter])
-        counter += 1
-        if counter == len(phrase):
-            break
-
-        # if character is repeated, place bogus character
-        if phrase[counter] == splitted[i]:
-            splitted[i] += "x"
-        else:
-            splitted[i] += phrase[counter]
-            counter += 1
-        i += 1
-
-    #if last charcater is single add bogus character
-    if len(splitted[-1]) < 2:
-        splitted[-1] += "x"
+    splitted = split(phrase)
 
     if function == "encrypt":
         grid = generatekey(key)
@@ -133,6 +107,39 @@ def playfair(function):
         decryption = decrypt(splitted, grid)
         
         return decryption
+
+
+#splits into two chars each
+def split(phrase):
+    phrase = phrase.lower().replace("j", "i")
+    # remove non alphabet letters
+    for char in phrase:
+        if char not in alpha:
+            phrase = phrase.replace(char, "")
+
+    # split input into two chars each time
+    counter = 0
+    i = 0
+    splitted = []
+    while counter < len(phrase):
+        splitted.append(phrase[counter])
+        counter += 1
+        if counter == len(phrase):
+            break
+
+        # if character is repeated, place bogus character
+        if phrase[counter] == splitted[i]:
+            splitted[i] += "x"
+        else:
+            splitted[i] += phrase[counter]
+            counter += 1
+        i += 1
+
+    #if last charcater is single add bogus character
+    if len(splitted[-1]) < 2:
+        splitted[-1] += "x"
+
+    return splitted
 
 
 # generates 5x5 grid for key
