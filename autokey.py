@@ -89,8 +89,8 @@ def autokey(function):
     if function == "encrypt":
         encryption = encrypt(phrase, key)
         if choice == "f":
-            outptr = open("out_" + filename, "w")
-            keyptr = open("key_out_" + filename, "w")
+            outptr = open("auto_" + filename, "w")
+            keyptr = open("key_auto_" + filename, "w")
             keyptr.writelines(str(key) + "\n")
             outptr.writelines(encryption)
             outptr.close()
@@ -109,7 +109,7 @@ def autokey(function):
                     inptr = open("key_" + filename, "r")
                     key = inptr.readline().strip()  # clean up key
                     for char in key:
-                        if char not in range(32, 127):
+                        if ord(char) not in range(32, 127):
                             key = key.replace(char, "")
                     break
                 except FileNotFoundError:
@@ -119,7 +119,7 @@ def autokey(function):
 
         decryption = decrypt(phrase, key)
         if choice == "f":
-            outptr = open("out_" + filename, "w")
+            outptr = open("de_" + filename, "w")
             outptr.writelines(decryption)
             outptr.close()
         return decryption

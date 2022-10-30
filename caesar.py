@@ -85,8 +85,8 @@ def caesar(function):
     if function == "encrypt":
         encryption = encrypt(phrase, key)
         if choice == "f":
-            outptr = open("out_" + filename, "w")
-            keyptr = open("key_out_" + filename, "w")
+            outptr = open("caesar_" + filename, "w")
+            keyptr = open("key_caesar_" + filename, "w")
             keyptr.writelines(str(key) + "\n")
             outptr.writelines(encryption)
             outptr.close()
@@ -113,7 +113,7 @@ def caesar(function):
 
         decryption = decrypt(phrase, key)
         if choice == "f":
-            outptr = open("out_" + filename, "w")
+            outptr = open("de_" + filename, "w")
             outptr.writelines(decryption)
             outptr.close()
         return decryption

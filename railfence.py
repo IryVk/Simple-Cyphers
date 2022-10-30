@@ -67,7 +67,9 @@ def railfence(function):
 
     # using secret library to randomly generate the key
     if choice2 == "r":
-        key = secrets.randbelow(10)
+        if len(phrase) < 6:
+            key = secrets.randbelow(len(phrase))
+        key = secrets.randbelow(6)
 
     # taking key input from user and ensuring it is valid
     elif choice2 == "p":
@@ -85,8 +87,8 @@ def railfence(function):
     if function == "encrypt":
         encryption = encrypt(phrase, key)
         if choice == "f":
-            outptr = open("out_" + filename, "w")
-            keyptr = open("key_out_" + filename, "w")
+            outptr = open("rail_" + filename, "w")
+            keyptr = open("key_rail_" + filename, "w")
             keyptr.writelines(str(key) + "\n")
             outptr.writelines(encryption)
             outptr.close()
@@ -113,7 +115,7 @@ def railfence(function):
 
         decryption = decrypt(phrase, key)
         if choice == "f":
-            outptr = open("out_" + filename, "w")
+            outptr = open("de_" + filename, "w")
             outptr.writelines(decryption)
             outptr.close()
         return decryption

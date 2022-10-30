@@ -114,8 +114,8 @@ def playfair(function):
         encryption = encrypt(splitted, grid)
 
         if choice == "f":
-            outptr = open("out_" + filename, "w")
-            keyptr = open("key_out_" + filename, "w")
+            outptr = open("play_" + filename, "w")
+            keyptr = open("key_play_" + filename, "w")
             keyptr.writelines(str(key) + "\n")
             outptr.writelines(encryption)
             outptr.close()
@@ -143,6 +143,11 @@ def playfair(function):
 
         grid = generatekey(key)
         decryption = decrypt(splitted, grid)
+
+        if choice == "f":
+            outptr = open("de_" + filename, "w")
+            outptr.writelines(decryption)
+            outptr.close()        
 
         return decryption
 
@@ -202,8 +207,8 @@ def generatekey(key):
 
 # find char location in key
 def find(char, key):
-    for i in range(5):
-        for j in range(5):
+    for i in range(len(key)):
+        for j in range(len(key[i])):
             if char == key[i][j]:
                 return i, j
 
