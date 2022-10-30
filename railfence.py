@@ -176,6 +176,7 @@ def decrypt(ciphertext, key):
     # we have to read in a zigzag
     decrypted = ""
     row = 0
+    shiftcycle = False  # flag to know which way to go up or down
     for i in range(len(ciphertext)):
         decrypted += railroad[row][i]
 

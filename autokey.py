@@ -131,7 +131,6 @@ def encrypt(plaintext, key):
         if ord(char) in range(32, 127):
             key += char
     encrypted = ""
-    print(key)
     counter = 0  # counter to help us repeat key until all text is encrypted
     for i in range(len(plaintext)):
         x = ord(plaintext[i])
