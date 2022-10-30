@@ -37,7 +37,7 @@ def playfair(function):
                 print("""Couldn't find file. Make sure file is inside project folder, otherwise write the path to the file and make sure to write the file extension, ex: ###.txt""")
 
     
-        phrase = inptr.read().lower().replace("j", "i")
+        phrase = ''.join(inptr.readlines()).lower().replace("j", "i")
         inptr.close()
 
     #get text from user
@@ -59,7 +59,7 @@ def playfair(function):
 
     #using secret library to randomly generate a 4 letter key
     if choice2 == "r":
-        alphabet = string.ascii_letters
+        alphabet = string.ascii_lowercase
         key = "".join(secrets.choice(alphabet) for i in range(4)).replace("j", "i")
 
     elif choice2 == "p":
@@ -119,7 +119,7 @@ def playfair(function):
             while True:
                 try:
                     inptr = open("key_" + filename, "r")
-                    key = inptr.readline().strip() #clean up key
+                    key = inptr.readline().replace("j", "i") #clean up key
                     for char in key:
                         if char not in alpha:
                             key = key.replace(char, "")
