@@ -66,10 +66,12 @@ def vigenere(function):
         else:
             break
 
-    # using secret library to randomly generate a 4 letter key
+    # using secret library to randomly generate a random length letter key
     if choice2 == "r":
+        sysrandom = secrets.SystemRandom()
+        length = sysrandom.randrange(1, 9)
         alphabet = string.ascii_letters
-        key = "".join(secrets.choice(alphabet) for i in range(4))
+        key = "".join(secrets.choice(alphabet) for i in range(length))
 
     # getting key input from user and making sure it is valid
     elif choice2 == "p":

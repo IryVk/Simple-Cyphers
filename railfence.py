@@ -40,7 +40,13 @@ def railfence(function):
 
     # get text from user
     elif choice == "w":
-        phrase = input("Enter Text: ")
+        while True:
+            phrase = input("Enter Text: ")
+            if len(phrase) < 3:
+                print("Phrase is too short.")
+            else:
+                break
+
 
     # ask if user has key or wants an auto key
     while True:
@@ -67,7 +73,13 @@ def railfence(function):
 
     # using secret library to randomly generate the key
     if choice2 == "r":
-        key = secrets.randbelow(int(len(phrase) / 2))
+        sysrandom = secrets.SystemRandom()
+        if len(phrase) < 4: # if phrase is shorter than 4 characters, the key can only be 2
+            key = 2
+        if len(phrase) == 4: # if phrase is equal to 4 characters, the key can only be 2 or 3
+            key = secrets.choice([2, 3])
+        else:
+            key = sysrandom.randrange(2, round(len(phrase)/2))
 
     # taking key input from user and ensuring it is valid
     elif choice2 == "p":

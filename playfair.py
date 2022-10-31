@@ -97,8 +97,10 @@ def playfair(function):
 
     # using secret library to randomly generate a 4 letter key
     if choice2 == "r":
+        sysrandom = secrets.SystemRandom()
+        length = sysrandom.randrange(0, 26)
         alphabet = string.ascii_lowercase
-        key = "".join(secrets.choice(alphabet) for i in range(4)).replace("j", "i")
+        key = "".join(secrets.choice(alphabet) for i in range(length)).replace("j", "i")
 
     elif choice2 == "p":
         # remove invalid chars from key
