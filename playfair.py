@@ -84,7 +84,7 @@ def playfair(function):
         )
         if choice2 not in ["p", "r"]:
             print(
-                "Invalid, please write 'p' to give key or 'r' to randomly generate a key."
+                "Invalid, please write 'p' to provide key or 'r' to randomly generate a key / read key from a file."
             )
 
         elif choice2 == "r" and function == "decrypt" and choice == "w":

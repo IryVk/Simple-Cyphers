@@ -38,7 +38,7 @@ def autokey(function):
                     """Couldn't find file. Make sure file is inside project folder, otherwise write the path to the file and make sure to write the file extension, ex: ###.txt"""
                 )
 
-        phrase = inptr.read()
+        phrase = "".join(inptr.readlines())
         inptr.close()
 
     # get text from user
@@ -57,7 +57,7 @@ def autokey(function):
         )
         if choice2 not in ["p", "r"]:
             print(
-                "Invalid, please write 'p' to give key or 'r' to randomly generate a key."
+                "Invalid, please write 'p' to provide key or 'r' to randomly generate a key / read key from a file."
             )
 
         elif choice2 == "r" and function == "decrypt" and choice == "w":

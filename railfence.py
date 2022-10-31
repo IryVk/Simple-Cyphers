@@ -35,7 +35,7 @@ def railfence(function):
                     """Couldn't find file. Make sure file is inside project folder, otherwise write the path to the file and make sure to write the file extension, ex: ###.txt"""
                 )
 
-        phrase = inptr.read()
+        phrase = "".join(inptr.readlines())
         inptr.close()
 
     # get text from user
@@ -54,7 +54,7 @@ def railfence(function):
         )
         if choice2 not in ["p", "r"]:
             print(
-                "Invalid, please write 'p' to give key or 'r' to randomly generate a key."
+                "Invalid, please write 'p' to provide key or 'r' to randomly generate a key / read key from a file."
             )
 
         elif choice2 == "r" and function == "decrypt" and choice == "w":
@@ -67,9 +67,7 @@ def railfence(function):
 
     # using secret library to randomly generate the key
     if choice2 == "r":
-        if len(phrase) < 6:
-            key = secrets.randbelow(len(phrase))
-        key = secrets.randbelow(6)
+        key = secrets.randbelow(int(len(phrase) / 2))
 
     # taking key input from user and ensuring it is valid
     elif choice2 == "p":
