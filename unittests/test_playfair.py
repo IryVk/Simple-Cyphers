@@ -11,11 +11,11 @@ def test_split():
 
 def test_generatekey():
     # test generation of 5x5 grid key
-    assert generatekey("arwa") == [["a", "r", "w", "b", "c"],
-                                   ["d", "e", "f", "g", "h"],
-                                   ["i", "k", "l", "m", "n"],
-                                   ["o", "p", "q", "s", "t"],
-                                   ["u", "v", "x", "y", "z"]]
+    assert generatekey("bg") == [["b", "g", "a", "c", "d"],
+                                 ["e", "f", "h", "i", "k"],
+                                 ["l", "m", "n", "o", "p"],
+                                 ["q", "r", "s", "t", "u"],
+                                 ["v", "w", "x", "y", "z"]]
 
 
 def test_encrypt():
