@@ -51,7 +51,12 @@ Each cipher can be run by itself using the corresponding `CIPHERNAME.py` file, o
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get started with the program, open with GitHub Desktop, then run in Visual Studio Code. Refer to the below sections for instructions and more details.
+To get started: 
+1. Open with GitHub Desktop 
+2. Clone the repository
+3. Open in Visual Studio Code 
+
+Refer to the below sections for instructions and more details.
 
 ### Prerequisites
 
@@ -100,12 +105,12 @@ Pytest Package is needed to run the unit tests.
    (P)rovide key or use (r)andom key/
                         (r)ead key from file?(p/r) ex: p
    ```
-   If the user chooses to provide the key themselves, they have to provide a valid key according to the cipher.
+   If the user chooses to provide the key themselves, they must provide a valid key according to the cipher.
    ```sh
    caesar.py : key has to be an integer between 1 - 95
-   autokey.py and vigenere.py : key can be any any sequence of characters
+   autokey.py and vigenere.py : key can be any sequence of characters
    playfair.py : key can be any sequence of letters
-   railfence.py : key can be any integer less than the length of the text
+   railfence.py : key can be any integer less than the length of the text and greater than 1
    ```
 5. Finally, the program will output the encrypted/decrypted text, in case the key was randomly generated, it will be outputted as well. If the text was read from a file, two new text files will be made; one to store the key, and the other to store the output text.
 
@@ -168,17 +173,6 @@ See the [open issues](https://github.com/Coventry-TKH/coursework-1-IryVk/issues)
 Arwa Essam Abdelaziz - aa2101585@tkh.edu.eg
 
 Project Link: [https://github.com/Coventry-TKH/coursework-1-IryVk](https://github.com/Coventry-TKH/coursework-1-IryVk)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -8,8 +8,17 @@ def main():
         if function in ["encrypt", "decrypt"]:
             break
         print("Invalid function, please choose one of the following (encrypt/decrypt).")
+    
+    output = railfence(function)
+    # type comparison to know how many values we will output
+    if type(output) is str:
+        print(f"Output: {output}")
+    # if key is also outputted, print both
+    elif type(output) is tuple:
+        print(f"Output: {output[0]}")
+        print(f"Generated Key: {output[1]}")
 
-    print(railfence(function))
+
 
 
 def railfence(function):
@@ -89,12 +98,12 @@ def railfence(function):
         while True:
             try:
                 key = int(input("Key: "))
-                if key >= len(phrase):
+                if key >= len(phrase) or key <= 1:
                     raise ValueError
                 break
             except ValueError:
                 print(
-                    "Invalid Key, please enter an integer smaller than size of text"
+                    "Invalid Key, please enter an integer smaller than size of text and greater than one"
                 )  # if key is bigger than or equal to the text, the output will just be the regular text
 
     # encrypting the text

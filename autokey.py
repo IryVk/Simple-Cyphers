@@ -10,9 +10,15 @@ def main():
             break
         print("Invalid function, please choose one of the following (encrypt/decrypt).")
 
-    print(autokey(function))
+    output = autokey(function)
+    # type comparison to know how many values we will output
+    if type(output) is str:
+        print(f"Output: {output}")
+    # if key is also outputted, print both
+    elif type(output) is tuple:
+        print(f"Output: {output[0]}")
+        print(f"Generated Key: {output[1]}")
 
-    return
 
 
 def autokey(function):
