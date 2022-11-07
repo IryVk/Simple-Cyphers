@@ -28,19 +28,55 @@ def main():
 
     # runs appropriate cipher file according to chosen cipher
     if cipher == "caesar":
-        print(c.caesar(function))
+        output = c.caesar(function)
+        # type comparison to know how many values we will output
+        if type(output) is str:
+            print(f"Output: {output}")
+        # if key is also outputted, print both
+        elif type(output) is tuple:
+            print(f"Output: {output[0]}")
+            print(f"Generated Key: {output[1]}")
 
     elif cipher == "vigenere":
-        print(v.vigenere(function))
+        output = v.vigenere(function)
+        # type comparison to know how many values we will output
+        if type(output) is str:
+            print(f"Output: {output}")
+        # if key is also outputted, print both
+        elif type(output) is tuple:
+            print(f"Output: {output[0]}")
+            print(f"Generated Key: {output[1]}")
 
     elif cipher == "railfence":
-        print(r.railfence(function))
+        output = r.railfence(function)
+        # type comparison to know how many values we will output
+        if type(output) is str:
+            print(f"Output: {output}")
+        # if key is also outputted, print both
+        elif type(output) is tuple:
+            print(f"Output: {output[0]}")
+            print(f"Generated Key: {output[1]}")
 
     elif cipher == "autokey":
-        print(a.autokey(function))
+        output = a.autokey(function)
+        # type comparison to know how many values we will output
+        if type(output) is str:
+            print(f"Output: {output}")
+        # if key is also outputted, print both
+        elif type(output) is tuple:
+            print(f"Output: {output[0]}")
+            print(f"Generated Key: {output[1]}")
 
     elif cipher == "playfair":
-        print(p.playfair(function))
+        output = p.playfair(function)
+        # type comparison to know how many values we will output
+        if type(output) is str:
+            print(f"Output: {output}")
+        # if key is also outputted, print both
+        elif type(output) is tuple:
+            print(f"Output: {output[0]}")
+            print(f"Generated Key: {output[1]}")
+
 
 
 if __name__ == "__main__":
