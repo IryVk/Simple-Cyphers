@@ -1,3 +1,5 @@
+import filecmp
+
 from railfence import encrypt
 from railfence import decrypt
 
@@ -19,5 +21,9 @@ def test_decrypt():
     # test decrypting special characters
     assert decrypt("Ast.ri:@k.w  5h/al{8./'ia5e}saa1dg m20uee1.", 8) == "Arwa's email is: {aa2101585@tkh.edu.eg}//.."
 
+
+def test_files():
+    # test if file decrypted from the encrypted file is the same as the original file
+    assert filecmp.cmp("arwa.txt", "testfiles/de_rail_arwa.txt", shallow=False)
 
 # using pytest, all tests passed

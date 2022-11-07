@@ -1,3 +1,5 @@
+import filecmp
+
 from caesar import encrypt
 from caesar import decrypt
 
@@ -19,5 +21,9 @@ def test_decrypt():
     # test decrypting special characters
     assert decrypt("Iz i/{(muiqt(q{B($ii:989=@=H|sp6ml}6mo&7766", 8) == "Arwa's email is: {aa2101585@tkh.edu.eg}//.."
 
+
+def test_files():
+    # test if file decrypted from the encrypted file is the same as the original file
+    assert filecmp.cmp("arwa.txt", "testfiles/de_caesar_arwa.txt", shallow=False)
 
 # using pytest, all tests passed
