@@ -84,8 +84,9 @@ Pytest Package is needed to run the unit tests.
 ## Usage
 ### Running Individual Ciphers
 1. Each cipher in this project can be run individually by typing the following into the terminal
-  ```sh
+   ```sh
    python (cipher).py
+   ex: python caesar.py
    ```
 2. The user will then be prompted to choose whether to encrypt or decrypt.
    ```sh
