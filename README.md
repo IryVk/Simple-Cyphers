@@ -35,6 +35,8 @@
 This program can encrypt/decrypt text using multiple ciphers: Caesar, Vigenere, Autokey, Playfair and Railfence. The program can encrypt and decrypt text from files or user input, generate secure random keys, and output text files to store encrypted/decrypted text and generated keys.
 Each cipher can be run by itself using the corresponding `CIPHERNAME.py` file, or by using `main.py` and providing command line arguments to run the desired cipher.
 
+https://user-images.githubusercontent.com/114566375/200607249-531db7af-9d40-419f-9753-e043ebf9f0cb.mp4
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -190,6 +192,5 @@ Project Link: [https://github.com/Coventry-TKH/coursework-1-IryVk](https://githu
 [issues-url]: https://github.com/Coventry-TKH/coursework-1-IryVk/issues
 [license-shield]: https://img.shields.io/github/license/Coventry-TKH/coursework-1-IryVk.svg?style=for-the-badge
 [license-url]: https://github.com/Coventry-TKH/coursework-1-IryVk/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
 [Python.js]: https://img.shields.io/badge/python-3.0-pink
 [Python-url]: https://www.python.org/
