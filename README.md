@@ -1,5 +1,5 @@
-# coursework-1-IryVk
-###### CW 1 for programming &amp; algorithms 1 module
+# Simple Cyphers Program
+###### CW 1 for programming &amp; algorithms 1 module at TKH-Coventry University
 
 <a name="readme-top"></a>
 
