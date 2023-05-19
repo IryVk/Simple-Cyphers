@@ -35,7 +35,11 @@
 This program can encrypt/decrypt text using multiple ciphers: Caesar, Vigenere, Autokey, Playfair and Railfence. The program can encrypt and decrypt text from files or user input, generate secure random keys, and output text files to store encrypted/decrypted text and generated keys.
 Each cipher can be run by itself using the corresponding `CIPHERNAME.py` file, or by using `main.py` and providing command line arguments to run the desired cipher.
 
-https://user-images.githubusercontent.com/114566375/200607249-531db7af-9d40-419f-9753-e043ebf9f0cb.mp4
+
+
+https://github.com/IryVk/Simple-Cyphers/assets/114566375/2730f98f-9cd3-4470-b6e3-683558d95823
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
